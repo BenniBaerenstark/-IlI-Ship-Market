@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         IlI Ship Market
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.4
 // @description  Tool for LastWar
 // @author       Revan
 // @match         http*://*.last-war.de/main.php*
