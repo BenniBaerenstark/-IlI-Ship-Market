@@ -1,12 +1,13 @@
 // ==UserScript==
-// @name         IlI Ship Market
+// @name         -DG- Ship Market
 // @namespace    http://tampermonkey.net/
 // @version      0.5
 // @description  Tool for LastWar
 // @author       Revan
-// @match         http*://*.last-war.de/main.php*
-// @match         http*://*.last-war.de/main-mobile.php*
+// @match        http*://*.last-war.de/main.php*
+// @match        http*://*.last-war.de/main-mobile.php*
 // @grant        none
+// @downloadURL  https://github.com/BenniBaerenstark/-IlI-Ship-Market/raw/main/main.user.js
 // ==/UserScript==
 
 (function() {
