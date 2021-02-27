@@ -1,5 +1,3 @@
-export { ships };
-
 var ships = new Array()
     const name = 0
     const att = 1
