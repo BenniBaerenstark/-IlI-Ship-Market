@@ -1,4 +1,4 @@
-console.log("TEST")
+export { ships };
 
 var ships = new Array()
     const name = 0
