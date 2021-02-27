@@ -47,3 +47,5 @@ var ships = new Array()
     ships[1][or] = 25091
     ships[1][fz] = 11641
     ships[1][go] = 567
+
+export { ships };
