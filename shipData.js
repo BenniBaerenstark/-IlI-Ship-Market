@@ -1,3 +1,5 @@
+function getShipData(){
+
 var ships = new Array()
     const name = 0
     const att = 1
@@ -15,7 +17,7 @@ var ships = new Array()
     const go = 13
 
     //Armageddon
-    ships[0] = new Array()
+    ships[0] = new Array
     ships[0][name] = "Армагеддон"
     ships[0][att] = 15270
     ships[0][def] = 10066
@@ -32,7 +34,7 @@ var ships = new Array()
     ships[0][go] = 100
 
     //Сухой Су-57
-    ships[1] = new Array()
+    ships[1] = new Array
     ships[1][name] = "Сухой Су-57"
     ships[1][att] = 0
     ships[1][def] = 0
@@ -47,3 +49,6 @@ var ships = new Array()
     ships[1][or] = 25091
     ships[1][fz] = 11641
     ships[1][go] = 567
+
+    return ships
+}
