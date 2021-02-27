@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         IlI Ship Market
 // @namespace    http://tampermonkey.net/
-// @version      0.1
-// @description  try to take over the world!
+// @version      0.2
+// @description  Tool for LastWar
 // @author       Revan
 // @match        https://last-war.de/main.php
 // @match        https://www.last-war.de/main.php
@@ -11,35 +11,79 @@
 
 (function() {
 
-    'use strict';
-
     var input
+    var select
 
-        document.getElementById("trade_offer").addEventListener("click", handelClicked, false);
-
-
-    function handelClicked(){
-        setTimeout(function(){
-            document.getElementsByClassName("navButton bigNavButton")[0].addEventListener("click", neuerHandelClicked, false)
-        }, 300);
+    'use strict';
+    window.onclick = e => {
+        if(e.target.innerText == "Neues Handelsangebot stellen"){
+            neuerHandelClicked()
+        }
     }
+
+
+
 
     function neuerHandelClicked(){
         setTimeout(function(){
            input = document.createElement("INPUT");
-           input.setAttribute("style", "float: right; vertical-align: middle; width: 50px;");
+           input.setAttribute("style", "width: 50px;");
            input.type = "number"
-           var btn = document.createElement("A");
+           input.value = 1
+
+            var max = document.createElement("span");
+            max.setAttribute("style", "cursor: pointer");
+            max.innerHTML = "Max"
+            max.addEventListener("click", maxShip, false);
+
+           var btn = document.createElement("a");
            btn.classList.add("formButtonNewMessage")
-           btn.innerHTML = "Armageddon"
-           btn.setAttribute("style", "float: right;");
+           btn.innerHTML = "Set"
+           btn.setAttribute("style", "float: none");
            btn.addEventListener("click", setTrade, false);
+
+            var values = getShipNames();
+            select = document.createElement("select");
+            select.name = "shipSelect";
+            select.id = "shipSelect"
+            for (const val of values) {
+                var option = document.createElement("option");
+                option.value = val;
+                option.text = val.charAt(0).toUpperCase() + val.slice(1);
+                select.appendChild(option);
+            }
+
+            var div = document.createElement("div");
+            div.id = "container"
+
            var parent = document.getElementsByClassName("formButtonNewMessage")[0].parentElement
-           parent.appendChild(btn)
-           parent.appendChild(input)
-           
-        }, 300);
+           parent.appendChild(div)
+            div.appendChild(max)
+           div.appendChild(input)
+           div.appendChild(select)
+           div.appendChild(btn)
+        }, 500);
     }
+
+    function maxShip(){
+        var shipNr = select.selectedIndex
+        var max = Math.floor(Roheisen/ships[shipNr][fe])
+        var maxKr = Math.floor(Kristall/ships[shipNr][kr])
+        if(maxKr < max) max = maxKr
+        var maxFb = Math.floor(Frubin/ships[shipNr][fb])
+        if(maxFb < max) max = maxFb
+        var maxOr = Math.floor(Orizin/ships[shipNr][or])
+        if(maxOr < max) max = maxOr
+        var maxFz = Math.floor(Frurozin/ships[shipNr][fz])
+        if(maxFz < max) max = maxFz
+        var maxGo = Math.floor(Gold/ships[shipNr][go])
+        if(maxGo < max) max = maxGo
+        input.value = max
+
+    }
+
+
+
 
     var ships = new Array()
     const name = 0
@@ -74,19 +118,49 @@
     ships[0][fz] = 17737
     ships[0][go] = 100
 
-    // setTrade(0,1)
+    //Сухой Су-57
+    ships[1] = new Array()
+    ships[1][name] = "Сухой Су-57"
+    ships[1][att] = 0
+    ships[1][def] = 0
+    ships[1][drive] = "NUK"
+    ships[1][drive_s] = 160
+    ships[1][freight] = 0
+    ships[1][lkom] = true
+    ships[1][tt] = true
+    ships[1][fe] = 27944
+    ships[1][kr] = 51422
+    ships[1][fb] = 2123
+    ships[1][or] = 35978
+    ships[1][fz] = 25091
+    ships[1][go] = 567
+
+    function getShipNames(){
+        var names = new Array();
+        for (var i = 0; i < ships.length; i++) {
+            names[i] = ships[i][name]
+        }
+        return names
+    }
+
 
     function setTrade(){
-        var ship = 0
+        console.log(select.selectedIndex)
+        var ship = select.selectedIndex
         var quantity = input.value
-        if (parseInt(quantity) > 1){
-            document.getElementById("my_eisen").value = quantity * ships[ship][fe]
+        document.getElementById("my_eisen").value = quantity * ships[ship][fe]
             document.getElementById("my_kristall").value = quantity * ships[ship][kr]
             document.getElementById("my_frubin").value = quantity * ships[ship][fb]
             document.getElementById("my_orizin").value = quantity * ships[ship][or]
             document.getElementById("my_frurozin").value = quantity * ships[ship][fz]
             document.getElementById("my_gold").value = quantity * ships[ship][go]
+        if (parseInt(quantity) >= 1){
+            document.getElementById("tradeOfferComment").value = quantity + " x " + ships[ship][name]
+            document.getElementById("his_eisen").value = 1
+        }
+        else{
+            document.getElementById("tradeOfferComment").value = ""
+            document.getElementById("his_eisen").value = 0
         }
     }
-
 })();
