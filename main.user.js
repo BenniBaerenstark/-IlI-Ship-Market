@@ -7,6 +7,8 @@
 // @match        https://last-war.de/main.php
 // @match        https://www.last-war.de/main.php
 // @match        https://www.last-war.de/main-mobile.php
+// @match        https://last-war.de/main.php
+// @match        https://last-war.de/main-mobile.php
 // @grant        none
 // ==/UserScript==
 
