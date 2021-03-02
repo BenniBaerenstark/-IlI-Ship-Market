@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         -DG- Ship Market
 // @namespace    http://tampermonkey.net/
-// @version      0.8
+// @version      0.92
 // @description  Tool for LastWar
 // @author       Revan
 // @match        http*://*.last-war.de/main.php*
