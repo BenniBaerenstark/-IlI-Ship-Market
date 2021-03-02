@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         -DG- Ship Market
 // @namespace    http://tampermonkey.net/
-// @version      0.91
+// @version      0.8
 // @description  Tool for LastWar
 // @author       Revan
 // @match        http*://*.last-war.de/main.php*
 // @match        http*://*.last-war.de/main-mobile.php*
 // @grant        none
 // @downloadURL  https://github.com/BenniBaerenstark/-DG-Ship-Market/raw/main/main.user.js
-// @updateURL    https://github.com/BenniBaerenstark/-DG-Ship-Market/raw/main/main.user.js
+// @updateURL    https://github.com/BenniBaerenstark/-DG-Ship-Market/edit/main/main.user.js
 // ==/UserScript==
 
 (function() {
@@ -85,6 +85,9 @@
 
     }
 
+
+
+
     var ships = new Array()
     const name = 0
     const att = 1
@@ -104,6 +107,13 @@
     //Armageddon
     ships[0] = new Array()
     ships[0][name] = "Армагеддон"
+    ships[0][att] = 15270
+    ships[0][def] = 10066
+    ships[0][drive] = "NUK"
+    ships[0][drive_s] = 160
+    ships[0][freight] = 120
+    ships[0][lkom] = true
+    ships[0][tt] = false
     ships[0][fe] = 27144
     ships[0][kr] = 51422
     ships[0][fb] = 456
@@ -114,6 +124,13 @@
     //Сухой Су-57
     ships[1] = new Array()
     ships[1][name] = "Сухой Су-57"
+    ships[1][att] = 0
+    ships[1][def] = 0
+    ships[1][drive] = "NUK"
+    ships[1][drive_s] = 160
+    ships[1][freight] = 0
+    ships[1][lkom] = true
+    ships[1][tt] = true
     ships[1][fe] = 27944
     ships[1][kr] = 51422
     ships[1][fb] = 2123
@@ -124,14 +141,22 @@
      //ъуран
     ships[2] = new Array()
     ships[2][name] = "ъуран"
+    ships[2][att] = 0
+    ships[2][def] = 0
+    ships[2][drive] = "NUK"
+    ships[2][drive_s] = 160
+    ships[2][freight] = 0
+    ships[2][lkom] = true
+    ships[2][tt] = true
     ships[2][fe] = 42399
     ships[2][kr] = 66422
     ships[2][fb] = 3633
     ships[2][or] = 14204
     ships[2][fz] = 5545
     ships[2][go] = 100
-    
-    ships[2] = new Array()
+
+    //Аракс
+    ships[3] = new Array()
     ships[3][name] = "Аракс"
     ships[3][fe] = 57866
     ships[3][kr] = 41422
@@ -140,7 +165,8 @@
     ships[3][fz] = 7117
     ships[3][go] = 567
 
-    ships[2] = new Array()
+    //левиафан
+    ships[4] = new Array()
     ships[4][name] = "левиафан"
     ships[4][fe] = 85733
     ships[4][kr] = 51422
@@ -148,8 +174,9 @@
     ships[4][or] = 15278
     ships[4][fz] = 6235
     ships[4][go] = 100
-    
-    ships[2] = new Array()
+
+    //Turboooo
+    ships[5] = new Array()
     ships[5][name] = "Turboooo"
     ships[5][fe] = 19144
     ships[5][kr] = 31422
