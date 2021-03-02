@@ -7,8 +7,8 @@
 // @match        http*://*.last-war.de/main.php*
 // @match        http*://*.last-war.de/main-mobile.php*
 // @grant        none
-// @downloadURL  https://github.com/BenniBaerenstark/-DG-Ship-Market/edit/main/main.user.js
-// @updateURL    https://github.com/BenniBaerenstark/-DG-Ship-Market/edit/main/main.user.js
+// @downloadURL  https://github.com/BenniBaerenstark/-DG-Ship-Market/raw/main/main.user.js
+// @updateURL    https://github.com/BenniBaerenstark/-DG-Ship-Market/raw/main/main.user.js
 // ==/UserScript==
 
 (function() {
@@ -85,9 +85,6 @@
 
     }
 
-
-
-
     var ships = new Array()
     const name = 0
     const att = 1
@@ -134,6 +131,7 @@
     ships[2][fz] = 5545
     ships[2][go] = 100
     
+    ships[2] = new Array()
     ships[3][name] = "Аракс"
     ships[3][fe] = 57866
     ships[3][kr] = 41422
@@ -142,6 +140,7 @@
     ships[3][fz] = 7117
     ships[3][go] = 567
 
+    ships[2] = new Array()
     ships[4][name] = "левиафан"
     ships[4][fe] = 85733
     ships[4][kr] = 51422
@@ -149,7 +148,8 @@
     ships[4][or] = 15278
     ships[4][fz] = 6235
     ships[4][go] = 100
-
+    
+    ships[2] = new Array()
     ships[5][name] = "Turboooo"
     ships[5][fe] = 19144
     ships[5][kr] = 31422
