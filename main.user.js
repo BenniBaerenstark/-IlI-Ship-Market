@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         -DG- Ship Market
 // @namespace    http://tampermonkey.net/
-// @version      0.6
+// @version      0.7
 // @description  Tool for LastWar
 // @author       Revan
 // @match        http*://*.last-war.de/main.php*
@@ -68,17 +68,18 @@
     }
 
     function maxShip(){
+        var percentTrade = 1+(lose/100)
         var shipNr = select.selectedIndex
-        var max = Math.floor(Roheisen/ships[shipNr][fe])
-        var maxKr = Math.floor(Kristall/ships[shipNr][kr])
+        var max = Math.floor(Roheisen/(ships[shipNr][fe]*percentTrade))
+        var maxKr = Math.floor(Kristall/(ships[shipNr][kr]*percentTrade))
         if(maxKr < max) max = maxKr
-        var maxFb = Math.floor(Frubin/ships[shipNr][fb])
+        var maxFb = Math.floor(Frubin/(ships[shipNr][fb]*percentTrade))
         if(maxFb < max) max = maxFb
-        var maxOr = Math.floor(Orizin/ships[shipNr][or])
+        var maxOr = Math.floor(Orizin/(ships[shipNr][or]*percentTrade))
         if(maxOr < max) max = maxOr
-        var maxFz = Math.floor(Frurozin/ships[shipNr][fz])
+        var maxFz = Math.floor(Frurozin/(ships[shipNr][fz]*percentTrade))
         if(maxFz < max) max = maxFz
-        var maxGo = Math.floor(Gold/ships[shipNr][go])
+        var maxGo = Math.floor(Gold/(ships[shipNr][go]*percentTrade))
         if(maxGo < max) max = maxGo
         input.value = max
 
