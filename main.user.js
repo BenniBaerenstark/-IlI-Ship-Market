@@ -64,8 +64,9 @@
 
             var div = document.createElement("div");
             div.id = "container"
-
-           var parent = document.getElementsByClassName("formButtonNewMessage")[2].parentElement
+           
+           var parent_length = document.getElementsByClassName("formButtonNewMessage").length
+           var parent = document.getElementsByClassName("formButtonNewMessage")[parent_length-1].parentElement
            parent.appendChild(div)
            div.appendChild(max)
            div.appendChild(input)
