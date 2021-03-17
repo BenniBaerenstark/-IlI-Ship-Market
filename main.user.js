@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         -DG- Ship Market
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.1.1
 // @description  Tool for LastWar
 // @author       Revan
 // @match        http*://*.last-war.de/main.php*
@@ -318,40 +318,40 @@
     ships[6][go] = 100
 
     //RIP
-    ships[6] = new Array()
-    ships[6][name] = "RIP"
-    ships[6][shipClass] = "leicht"
-    ships[6][att] = 9
-    ships[6][def] = 0
-    ships[6][drive] = "NUK"
-    ships[6][drive_s] = 160
-    ships[6][freight] = 0
-    ships[6][lkom] = false
-    ships[6][tt] = false
-    ships[6][fe] = 622
-    ships[6][kr] = 484
-    ships[6][fb] = 0
-    ships[6][or] = 461
-    ships[6][fz] = 578
-    ships[6][go] = 0
-
-    //иди домой
     ships[7] = new Array()
-    ships[7][name] = "иди домой"
+    ships[7][name] = "RIP"
     ships[7][shipClass] = "leicht"
-    ships[7][att] = 204
-    ships[7][def] = 189
+    ships[7][att] = 9
+    ships[7][def] = 0
     ships[7][drive] = "NUK"
     ships[7][drive_s] = 160
-    ships[7][freight] = 3800
+    ships[7][freight] = 0
     ships[7][lkom] = false
     ships[7][tt] = false
-    ships[7][fe] = 2255
-    ships[7][kr] = 934
-    ships[7][fb] = 460
-    ships[7][or] = 728
-    ships[7][fz] = 728
+    ships[7][fe] = 622
+    ships[7][kr] = 484
+    ships[7][fb] = 0
+    ships[7][or] = 461
+    ships[7][fz] = 578
     ships[7][go] = 0
+
+    //иди домой
+    ships[8] = new Array()
+    ships[8][name] = "иди домой"
+    ships[8][shipClass] = "leicht"
+    ships[8][att] = 204
+    ships[8][def] = 189
+    ships[8][drive] = "NUK"
+    ships[8][drive_s] = 160
+    ships[8][freight] = 3800
+    ships[8][lkom] = false
+    ships[8][tt] = false
+    ships[8][fe] = 2255
+    ships[8][kr] = 934
+    ships[8][fb] = 460
+    ships[8][or] = 728
+    ships[8][fz] = 728
+    ships[8][go] = 0
 
 
     function getShipNames(){
