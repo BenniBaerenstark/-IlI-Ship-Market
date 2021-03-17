@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         -DG- Ship Market
 // @namespace    http://tampermonkey.net/
-// @version      0.99
+// @version      1.1
 // @description  Tool for LastWar
 // @author       Revan
 // @match        http*://*.last-war.de/main.php*
@@ -13,11 +13,12 @@
 
 (function() {
 
-    var input
+	var input
     var select
     var table
 
     'use strict';
+
     window.onclick = e => {
         if(e.target.innerText == "Neues Handelsangebot stellen"){
             neuerHandelClicked()
@@ -26,9 +27,6 @@
             neuerHandelClicked()
         }
     }
-
-
-
 
     function neuerHandelClicked(){
         setTimeout(function(){
@@ -64,7 +62,7 @@
 
             var div = document.createElement("div");
             div.id = "container"
-           
+
            var parent_length = document.getElementsByClassName("formButtonNewMessage").length
            var parent = document.getElementsByClassName("formButtonNewMessage")[parent_length-1].parentElement
            parent.appendChild(div)
@@ -75,7 +73,7 @@
            table = infoTable()
            parent.appendChild(table)
            updateTable()
-        }, 500);
+        }, 800);
     }
 
     function infoTable(){
@@ -108,33 +106,24 @@
 
         var secondRow = document.createElement("tr")
         var name_String = document.createElement("th")
-        //name_String.innerText = ships[shipNr][name]
         name_String.id = "name_String"
         secondRow.appendChild(name_String)
         var sClass_String = document.createElement("td")
-        //sClass_String.innerText = ships[shipNr][shipClass]
         sClass_String.id = "sClass_String"
         secondRow.appendChild(sClass_String)
         var attDef_Value = document.createElement("td")
-        //attDef_Value.innerText = ships[shipNr][att] + " / " + ships[shipNr][def]
         attDef_Value.id = "attDef_Value"
         secondRow.appendChild(attDef_Value)
         var drive_Value = document.createElement("td")
-        //drive_Value.innerText = ships[shipNr][drive] + " " + ships[shipNr][drive_s] + "%"
         drive_Value.id = "drive_Value"
         secondRow.appendChild(drive_Value)
         var freight_Value = document.createElement("td")
-        //freight_Value.innerText = ships[shipNr][freight]
         freight_Value.id = "freight_Value"
         secondRow.appendChild(freight_Value)
         var lKom_Value = document.createElement("td")
-        //if(ships[shipNr][lkom]) lKom_Value.innerText = symbol_true
-        //else lKom_Value.innerText = symbol_false
         lKom_Value.id = "lKom_Value"
         secondRow.appendChild(lKom_Value)
         var tt_Value = document.createElement("td")
-        //if(ships[shipNr][tt]) tt_Value.innerText = symbol_true
-        //else tt_Value.innerText = symbol_false
         tt_Value.id = "tt_Value"
         secondRow.appendChild(tt_Value)
 
@@ -237,7 +226,7 @@
     ships[1][or] = 25091
     ships[1][fz] = 11641
     ships[1][go] = 567
-    
+
      //ъуран
     ships[2] = new Array()
     ships[2][name] = "ъуран"
@@ -309,6 +298,60 @@
     ships[5][or] = 51617
     ships[5][fz] = 26287
     ships[5][go] = 100
+
+    //TOKen
+    ships[6] = new Array()
+    ships[6][name] = "TOKen"
+    ships[6][shipClass] = "taktisch"
+    ships[6][att] = 8120
+    ships[6][def] = 0
+    ships[6][drive] = "NUK"
+    ships[6][drive_s] = 160
+    ships[6][freight] = 0
+    ships[6][lkom] = true
+    ships[6][tt] = false
+    ships[6][fe] = 290
+    ships[6][kr] = 721
+    ships[6][fb] = 433
+    ships[6][or] = 3802
+    ships[6][fz] = 1912
+    ships[6][go] = 100
+
+    //RIP
+    ships[6] = new Array()
+    ships[6][name] = "RIP"
+    ships[6][shipClass] = "leicht"
+    ships[6][att] = 9
+    ships[6][def] = 0
+    ships[6][drive] = "NUK"
+    ships[6][drive_s] = 160
+    ships[6][freight] = 0
+    ships[6][lkom] = false
+    ships[6][tt] = false
+    ships[6][fe] = 622
+    ships[6][kr] = 484
+    ships[6][fb] = 0
+    ships[6][or] = 461
+    ships[6][fz] = 578
+    ships[6][go] = 0
+
+    //иди домой
+    ships[7] = new Array()
+    ships[7][name] = "иди домой"
+    ships[7][shipClass] = "leicht"
+    ships[7][att] = 204
+    ships[7][def] = 189
+    ships[7][drive] = "NUK"
+    ships[7][drive_s] = 160
+    ships[7][freight] = 3800
+    ships[7][lkom] = false
+    ships[7][tt] = false
+    ships[7][fe] = 2255
+    ships[7][kr] = 934
+    ships[7][fb] = 460
+    ships[7][or] = 728
+    ships[7][fz] = 728
+    ships[7][go] = 0
 
 
     function getShipNames(){
