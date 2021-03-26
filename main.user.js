@@ -220,7 +220,7 @@
     ships[1][freight] = 207
     ships[1][lkom] = true
     ships[1][tt] = false
-    ships[1][fe] = 36448
+    ships[1][fe] = 36400
     ships[1][kr] = 53155
     ships[1][fb] = 20125
     ships[1][or] = 40755
