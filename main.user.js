@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         -DG- Ship Market
 // @namespace    http://tampermonkey.net/
-// @version      1.1.2
+// @version      1.1.3
 // @description  Tool for LastWar
 // @author       Revan
 // @match        http*://*.last-war.de/main.php*
@@ -262,114 +262,133 @@
     ships[3][or] = 14204
     ships[3][fz] = 5545
     ships[3][go] = 100
+	
+    //атака
+    ships[4] = new Array()
+    ships[4][name] = "атака"
+    ships[4][shipClass] = "schwer"
+    ships[4][att] = 242
+    ships[4][def] = 20664
+    ships[4][drive] = "HYP"
+    ships[4][drive_s] = 160
+    ships[4][freight] = 190000
+    ships[4][lkom] = true
+    ships[4][tt] = false
+    ships[4][fe] = 71656
+    ships[4][kr] = 68155
+    ships[4][fb] = 20102
+    ships[4][or] = 18711
+    ships[4][fz] = 8339+1900
+    ships[4][go] = 100
 
     //Аракс
-    ships[4] = new Array()
-    ships[4][name] = "Аракс"
-    ships[4][shipClass] = "schwer"
-    ships[4][att] = 3301
-    ships[4][def] = 8020
-    ships[4][drive] = "NUK"
-    ships[4][drive_s] = 160
-    ships[4][freight] = 224399
-    ships[4][lkom] = true
-    ships[4][tt] = true
-    ships[4][fe] = 57866
-    ships[4][kr] = 41422
-    ships[4][fb] = 3700
-    ships[4][or] = 17117
-    ships[4][fz] = 7117
-    ships[4][go] = 567
-
-    //левиафан
     ships[5] = new Array()
-    ships[5][name] = "левиафан"
+    ships[5][name] = "Аракс"
     ships[5][shipClass] = "schwer"
-    ships[5][att] = 1371
-    ships[5][def] = 8027
+    ships[5][att] = 3301
+    ships[5][def] = 8020
     ships[5][drive] = "NUK"
     ships[5][drive_s] = 160
-    ships[5][freight] = 360000
+    ships[5][freight] = 224399
     ships[5][lkom] = true
-    ships[5][tt] = false
-    ships[5][fe] = 85733
-    ships[5][kr] = 51422
-    ships[5][fb] = 433
-    ships[5][or] = 15278
-    ships[5][fz] = 6235
-    ships[5][go] = 100
+    ships[5][tt] = true
+    ships[5][fe] = 57866
+    ships[5][kr] = 41422
+    ships[5][fb] = 3700
+    ships[5][or] = 17117
+    ships[5][fz] = 7117
+    ships[5][go] = 567
 
-    //Turboooo
+
+    //левиафан
     ships[6] = new Array()
-    ships[6][name] = "Turboooo"
+    ships[6][name] = "левиафан"
     ships[6][shipClass] = "schwer"
-    ships[6][att] = 36179
-    ships[6][def] = 8024
+    ships[6][att] = 1371
+    ships[6][def] = 8027
     ships[6][drive] = "NUK"
-    ships[6][drive_s] = 154
-    ships[6][freight] = 182
+    ships[6][drive_s] = 160
+    ships[6][freight] = 360000
     ships[6][lkom] = true
     ships[6][tt] = false
-    ships[6][fe] = 19144
-    ships[6][kr] = 31422
-    ships[6][fb] = 456
-    ships[6][or] = 51617
-    ships[6][fz] = 26287
+    ships[6][fe] = 85733
+    ships[6][kr] = 51422
+    ships[6][fb] = 433
+    ships[6][or] = 15278
+    ships[6][fz] = 6235
     ships[6][go] = 100
 
-    //TOKen
-    ships[9] = new Array()
-    ships[9][name] = "TOKen"
-    ships[9][shipClass] = "taktisch"
-    ships[9][att] = 8120
-    ships[9][def] = 0
-    ships[9][drive] = "NUK"
-    ships[9][drive_s] = 160
-    ships[9][freight] = 0
-    ships[9][lkom] = true
-    ships[9][tt] = false
-    ships[9][fe] = 290
-    ships[9][kr] = 721
-    ships[9][fb] = 433
-    ships[9][or] = 3802
-    ships[9][fz] = 1912
-    ships[9][go] = 100
+    //Turboooo
+    ships[7] = new Array()
+    ships[7][name] = "Turboooo"
+    ships[7][shipClass] = "schwer"
+    ships[7][att] = 36179
+    ships[7][def] = 8024
+    ships[7][drive] = "NUK"
+    ships[7][drive_s] = 154
+    ships[7][freight] = 182
+    ships[7][lkom] = true
+    ships[7][tt] = false
+    ships[7][fe] = 19144
+    ships[7][kr] = 31422
+    ships[7][fb] = 456
+    ships[7][or] = 51617
+    ships[7][fz] = 26287
+    ships[7][go] = 100
 
     //RIP
-    ships[7] = new Array()
-    ships[7][name] = "RIP"
-    ships[7][shipClass] = "leicht"
-    ships[7][att] = 9
-    ships[7][def] = 0
-    ships[7][drive] = "NUK"
-    ships[7][drive_s] = 160
-    ships[7][freight] = 0
-    ships[7][lkom] = false
-    ships[7][tt] = false
-    ships[7][fe] = 622
-    ships[7][kr] = 484
-    ships[7][fb] = 0
-    ships[7][or] = 461
-    ships[7][fz] = 578
-    ships[7][go] = 0
-
-    //иди домой
     ships[8] = new Array()
-    ships[8][name] = "иди домой"
+    ships[8][name] = "RIP"
     ships[8][shipClass] = "leicht"
-    ships[8][att] = 204
-    ships[8][def] = 189
+    ships[8][att] = 9
+    ships[8][def] = 0
     ships[8][drive] = "NUK"
     ships[8][drive_s] = 160
-    ships[8][freight] = 3800
+    ships[8][freight] = 0
     ships[8][lkom] = false
     ships[8][tt] = false
-    ships[8][fe] = 2255
-    ships[8][kr] = 934
-    ships[8][fb] = 460
-    ships[8][or] = 728
-    ships[8][fz] = 728
+    ships[8][fe] = 622
+    ships[8][kr] = 484
+    ships[8][fb] = 0
+    ships[8][or] = 461
+    ships[8][fz] = 578
     ships[8][go] = 0
+
+    //иди домой
+    ships[9] = new Array()
+    ships[9][name] = "иди домой"
+    ships[9][shipClass] = "leicht"
+    ships[9][att] = 204
+    ships[9][def] = 189
+    ships[9][drive] = "NUK"
+    ships[9][drive_s] = 160
+    ships[9][freight] = 3800
+    ships[9][lkom] = false
+    ships[9][tt] = false
+    ships[9][fe] = 2255
+    ships[9][kr] = 934
+    ships[9][fb] = 460
+    ships[9][or] = 728
+    ships[9][fz] = 728
+    ships[9][go] = 0
+	
+    //TOKen
+    ships[10] = new Array()
+    ships[10][name] = "TOKen"
+    ships[10][shipClass] = "taktisch"
+    ships[10][att] = 8120
+    ships[10][def] = 0
+    ships[10][drive] = "NUK"
+    ships[10][drive_s] = 160
+    ships[10][freight] = 0
+    ships[10][lkom] = true
+    ships[10][tt] = false
+    ships[10][fe] = 290
+    ships[10][kr] = 721
+    ships[10][fb] = 433
+    ships[10][or] = 3802
+    ships[10][fz] = 1912
+    ships[10][go] = 100
 
 
     function getShipNames(){
